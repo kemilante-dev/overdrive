@@ -5,7 +5,7 @@
   // === SUPABASE CONFIG ===
   // Get these from https://supabase.com (free tier, no card required)
   const SUPABASE_URL = 'https://YOUR_PROJECT.supabase.co';
-  const SUPABASE_KEY = 'YOUR_ANON_KEY';
+  const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx2Z2dmcWhxeWhtaHNtdWt5bmJlIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIwNTk1NzAsImV4cCI6MjA5NzYzNTU3MH0.Axx2XeQaf-bled3NecT1gz__MQiTRPIP47zrYmRvEHI';
 
   // Helper for Supabase API calls
   async function supabaseCall(table, method = 'GET', data = null) {
