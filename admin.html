@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Admin — Overdrive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo">OVER<span>DRIVE</span></a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="scenes.html">Scenes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html#download">Download</a></li>
+      <li><a href="login.html" id="nav-login">Log In</a></li>
+      <li><a href="admin.html" id="nav-admin" style="display:none">Admin</a></li>
+      <li><a href="#" id="nav-logout" style="display:none">Log Out</a></li>
+    </ul>
+  </div>
+</header>
+
+<div id="admin-shell" class="admin-shell">
+  <h1 style="text-align:center">Admin Dashboard</h1>
+  <p style="text-align:center;color:var(--muted)">Manage users, announcements, features, scenes and page content.</p>
+
+  <div class="admin-tabs">
+    <button class="admin-tab active" data-tab="users">Users</button>
+    <button class="admin-tab" data-tab="ann">Announcements</button>
+    <button class="admin-tab" data-tab="feat">Features</button>
+    <button class="admin-tab" data-tab="scene">Scenes</button>
+    <button class="admin-tab" data-tab="pages">Pages</button>
+  </div>
+
+  <div class="admin-panel active" id="panel-users">
+    <div class="admin-toolbar"><h3 style="margin:0">Users</h3><button class="btn btn-primary btn-sm" id="btn-add-user">+ Add User</button></div>
+    <table class="admin-table"><thead><tr><th>Username</th><th>Email</th><th>Role</th><th>Actions</th></tr></thead><tbody id="users-tbody"></tbody></table>
+  </div>
+
+  <div class="admin-panel" id="panel-ann">
+    <div class="admin-toolbar"><h3 style="margin:0">Announcements</h3><button class="btn btn-primary btn-sm" id="btn-add-ann">+ Add Announcement</button></div>
+    <table class="admin-table"><thead><tr><th>Title</th><th>Date</th><th>Image</th><th>Actions</th></tr></thead><tbody id="ann-tbody"></tbody></table>
+  </div>
+
+  <div class="admin-panel" id="panel-feat">
+    <div class="admin-toolbar"><h3 style="margin:0">Game Features</h3><button class="btn btn-primary btn-sm" id="btn-add-feat">+ Add Feature</button></div>
+    <table class="admin-table"><thead><tr><th>Icon</th><th>Feature</th><th>Actions</th></tr></thead><tbody id="feat-tbody"></tbody></table>
+  </div>
+
+  <div class="admin-panel" id="panel-scene">
+    <div class="admin-toolbar"><h3 style="margin:0">Scenes</h3><button class="btn btn-primary btn-sm" id="btn-add-scene">+ Add Scene</button></div>
+    <table class="admin-table"><thead><tr><th>Preview</th><th>Title</th><th>Actions</th></tr></thead><tbody id="scene-tbody"></tbody></table>
+  </div>
+
+  <div class="admin-panel" id="panel-pages">
+    <div class="admin-toolbar"><h3 style="margin:0">About Page</h3><button class="btn btn-primary btn-sm" id="btn-edit-about">Edit</button></div>
+    <table class="admin-table"><tbody id="about-tbody"></tbody></table>
+
+    <div class="admin-toolbar" style="margin-top:1.5rem"><h3 style="margin:0">Contact Page</h3><button class="btn btn-primary btn-sm" id="btn-edit-contact">Edit</button></div>
+    <table class="admin-table"><tbody id="contact-tbody"></tbody></table>
+    
+     <div class="admin-toolbar" style="margin-top:1.5rem"><h3 style="margin:0">Download Link</h3><button class="btn btn-primary btn-sm" id="btn-edit-download">Edit</button></div>
+    <table class="admin-table"><tbody id="download-tbody"></tbody></table>
+  </div>
+</div>
+
+<script src="assets/script.js"></script>
+</body>
+</html>

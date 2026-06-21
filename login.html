@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Log In — Overdrive</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container nav-wrap">
+    <a href="index.html" class="logo">OVER<span>DRIVE</span></a>
+    <button class="nav-toggle" aria-label="Menu">☰</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="features.html">Features</a></li>
+      <li><a href="scenes.html">Scenes</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="index.html#download">Download</a></li>
+      <li><a href="login.html" id="nav-login">Log In</a></li>
+      <li><a href="admin.html" id="nav-admin" style="display:none">Admin</a></li>
+      <li><a href="#" id="nav-logout" style="display:none">Log Out</a></li>
+    </ul>
+  </div>
+</header>
+
+<section>
+  <form class="form-card" id="login-form">
+    <h2 style="text-align:center">Welcome Back</h2>
+    <p style="text-align:center;color:var(--muted);font-size:.9rem">Demo: <strong>admin / admin123</strong></p>
+    <div class="form-group"><label>Username or email</label><input id="login-username" required></div>
+    <div class="form-group"><label>Password</label><input id="login-password" type="password" required></div>
+    <button class="btn btn-primary" type="submit" style="width:100%">Log In</button>
+    <p style="text-align:center;margin-top:1rem;font-size:.9rem">No account? <a href="register.html">Register</a></p>
+  </form>
+</section>
+<script src="assets/script.js"></script>
+</body>
+</html>
