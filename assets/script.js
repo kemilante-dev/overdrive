@@ -43,7 +43,7 @@
     ],
     od_about: {
       title: 'About Overdrive',
-      body: 'Overdrive is a love letter to the Filipino jeepney — the colorful, hand-painted king of the road. Built by a small team of artists and engineers, our goal is to capture the rhythm of a real driver\'s day: the regulars, the routes, the rain, the radio. Every jeep tells a story. We\'re here to let you drive yours.'
+      body: 'Overdrive is a love letter to the Filipino jeepney — the colorful, hand-painted king of the road. Built by a small team of artists and engineers, our goal is to capture the rhythm o[...]'
     },
     od_contact: {
       email:'hello@overdrive.ph',
@@ -56,7 +56,24 @@
       label: 'Download Overdrive'
     }
   };
+
+  // Versioned seeding: bump SEED_VERSION when you want clients to refresh their localStorage copy.
+  const SEED_VERSION = 1;
+
   function seed() {
+    try {
+      const current = store.get('od_seed_version', 0);
+      // If SEED_VERSION increased, overwrite stored seeds so clients pick up content updates
+      if ((typeof current !== 'number' ? Number(current) : current) < SEED_VERSION) {
+        Object.keys(SEED).forEach(k => store.set(k, SEED[k]));
+        store.set('od_seed_version', SEED_VERSION);
+        return;
+      }
+    } catch (e) {
+      // fallback to previous behavior if anything unexpected happens
+      console.warn('Seed version check failed', e);
+    }
+    // Original behavior: only set missing keys
     Object.keys(SEED).forEach(k => {
       if (localStorage.getItem(k) === null) store.set(k, SEED[k]);
     });
@@ -484,7 +501,7 @@
       <div class="form-group"><label>Username</label><input id="m-username" value="${escapeAttr(u.username)}"></div>
       <div class="form-group"><label>Email</label><input id="m-email" type="email" value="${escapeAttr(u.email)}"></div>
       <div class="form-group"><label>Password</label><input id="m-password" value="${escapeAttr(u.password||'')}"></div>
-      <div class="form-group"><label>Role</label><select id="m-role"><option value="user"${u.role==='user'?' selected':''}>user</option><option value="admin"${u.role==='admin'?' selected':''}>admin</option></select></div>
+      <div class="form-group"><label>Role</label><select id="m-role"><option value="user"${u.role==='user'?' selected':''}>user</option><option value="admin"${u.role==='admin'?' selected':''}>adm[...]
       <div class="modal-actions"><button class="btn btn-ghost" id="m-cancel">Cancel</button><button class="btn btn-primary" id="m-save">Save</button></div>
     `, m => {
       $('#m-cancel',m).onclick = closeModal;
